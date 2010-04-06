@@ -1,0 +1,18 @@
+{
+  "name": "NoFocusHighlight",
+  "version": "1.0.0",
+  "description": "Removes auto-complete highlight background and input focus ring",
+  "icons": { 
+    "128": "icon128.png",
+    "48": "icon48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*", "ftp://*/*"],
+      "all_frames": true,
+      "css": ["nofocus.css"],
+      "js": ["noautocomplete.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
