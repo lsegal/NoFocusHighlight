@@ -29,6 +29,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 function removeAutoCompleteFocus() {
+  var focusElement = document.activeElement;
   var scrollPos = {left:document.body.scrollLeft, top:document.body.scrollTop};
   var elements = document.getElementsByTagName('input');
   for (var i = 0; i < elements.length; i++) { elements[i].focus(); elements[i].blur(); }
@@ -36,6 +37,7 @@ function removeAutoCompleteFocus() {
   for (var i = 0; i < elements.length; i++) { elements[i].focus(); elements[i].blur(); }
   document.body.scrollLeft = scrollPos.left;
   document.body.scrollTop = scrollPos.top;
+  if (focusElement && focusElement.focus) focusElement.focus();
 }
 
 removeAutoCompleteFocus();
