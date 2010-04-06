@@ -1,6 +1,6 @@
 {
   "name": "NoFocusHighlight",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Removes auto-complete highlight background and input focus ring",
   "icons": { 
     "128": "icon128.png",
