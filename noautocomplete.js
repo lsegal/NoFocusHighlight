@@ -32,9 +32,12 @@ function removeAutoCompleteFocus() {
   var focusElement = document.activeElement;
   var scrollPos = {left:document.body.scrollLeft, top:document.body.scrollTop};
   var elements = document.getElementsByTagName('input');
-  for (var i = 0; i < elements.length; i++) { elements[i].focus(); elements[i].blur(); }
-  var elements = document.getElementsByTagName('textarea');
-  for (var i = 0; i < elements.length; i++) { elements[i].focus(); elements[i].blur(); }
+  for (var i = 0; i < elements.length; i++) { 
+    if (window.getComputedStyle(elements[i], '').getPropertyValue('background-color') == "rgb(250, 255, 189)") { 
+      elements[i].focus();
+      elements[i].blur();
+    } 
+  }
   document.body.scrollLeft = scrollPos.left;
   document.body.scrollTop = scrollPos.top;
   if (focusElement && focusElement.focus) focusElement.focus();
